@@ -1,0 +1,120 @@
+:root {
+  --color-blue: #01BCFF;
+  --color-white: #ffffff;
+}
+
+/* -- general screen styles --------------------------------------------------*/
+
+body {
+  margin: 0;
+}
+
+.demos-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.demos {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -- demo nav menu ----------------------------------------------------------*/
+
+.demos-menu {}
+
+.demos-menu__list {
+  --color-blue: #1d48f3;
+  --color-orange: #ff764b;
+  --color-yellow: #fc0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.demos-menu__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: black;
+}
+
+.demos-menu__list-item a {
+  text-decoration: none;
+}
+
+.demo-menu__list-item--active a {
+  color: white;
+}
+
+.demo-menu__list-item--active:nth-child(1) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(2) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(3) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(4) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(5) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(6) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(7) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(8) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(9) {
+  background-color: var(--color-blue);
+}
+.demo-menu__list-item--active:nth-child(10) {
+  background-color: var(--color-blue);
+}
+
+/* -- general demo styles ----------------------------------------------------*/
+
+.demos-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.demo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.demo-btn-wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 80px auto 80px;
+  grid-column-gap: 10px;
+  grid-row-gap: 30px;
+  justify-content: center;
+}
+
+/* -- material wave button ---------------------------------------------------*/
+
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 4px;
+  padding: 0 16px;
+  min-width: 64px;
+  height: 36px;
+  align-self: center;
+}
