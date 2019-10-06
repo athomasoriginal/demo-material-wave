@@ -1,0 +1,5 @@
+^{:watch-dirs ["src"]
+  :css-dirs   ["resources"]}
+{:main       demo-material-wave.material-wave
+ :output-dir "out"
+ :output-to  "out/main.js"}

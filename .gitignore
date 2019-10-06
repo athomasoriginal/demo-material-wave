@@ -1,4 +1,5 @@
 # clojure
 .cpcache
-out
-target
+target/
+out/*
+!out/main.js
