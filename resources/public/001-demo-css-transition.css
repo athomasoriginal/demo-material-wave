@@ -1,0 +1,51 @@
+/* -- 001 - Demo - CSS Transition --------------------------------------------*/
+
+.wave-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+}
+
+.wave-container--show {
+  overflow: initial;
+}
+
+.wave, /* sentinel */
+.wave--no-sentinel:before /* no sentinel */ {
+  position: absolute;
+  content: " "; /* no sentinel */
+  border-radius: 50%;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  margin-top:-50px;
+  margin-left:-50px;
+  background: radial-gradient(rgba(0,0,0,.2) 0,
+                              rgba(0,0,0,.3) 40%,
+                              rgba(0,0,0,.4) 50%,
+                              rgba(0,0,0,.5) 60%,
+                              rgba(255,255,255,0) 70%);
+  /* scale - start */
+  transform: scale(0) translate(0,0);
+  transition: transform 0.5s ease-out,
+              opacity   0.5s ease-out;
+
+  /* origin */
+  top: 19px;
+  left: 52.5px;
+}
+
+/* scale - end */
+.wave-scale--start,
+.wave-scale--no-sentinel-start:before {
+  transform: scale(.2) translate(0,0);
+}
+.wave-scale--middle,
+.wave-scale--no-sentinel-middle:before {
+  transform: scale(.7) translate(0,0);
+}
+.wave-scale--end,
+.wave-scale--no-sentinel-end:before {
+  transform: scale(1.2) translate(0,0);
+}

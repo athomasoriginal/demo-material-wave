@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Material Wave - Demo 1</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="001-css-transition.css" />
+  </head>
+  <body>
+
+    <div class="demo-screen">
+      <nav class="demos-menu">
+        <ul class="demos-menu__list">
+          <li class="demos-menu__list-item demo-menu__list-item--active"><a href="001-demo-css-transition.html">1</a></li>
+        </ul>
+      </nav>
+
+      <div class="demos-wrapper">
+        <div class="demo-wrapper">
+          <h2>CSS Transition - Static</h2>
+          <div class="demo-btn-wrapper">
+            <button class="btn wave-container wave-container--show">Button<div class="wave wave-scale--start"></div></button>
+            <button class="btn wave-container wave-container--show">Button<div class="wave wave-scale--middle"></div></button>
+            <button class="btn wave-container wave-container--show">Button<div class="wave wave-scale--end"></div></button>
+          </div>
+        </div>
+
+        <div class="demo-wrapper">
+          <h2>CSS Transition - Static</h2>
+          <div class="demo-btn-wrapper">
+            <button class="btn wave-container">Button<div class="wave wave-scale--start"></div></button>
+            <button class="btn wave-container">Button<div class="wave wave-scale--middle"></div></button>
+            <button class="btn wave-container">Button<div class="wave wave-scale--end"></div></button>
+          </div>
+        </div>
+
+        <div class="demo-wrapper">
+          <h2>CSS Transition - Static - No Sentinel</h2>
+          <div class="demo-btn-wrapper">
+            <button class="btn wave-container wave--no-sentinel wave-scale--no-sentinel-start">Button</button>
+            <button class="btn wave-container wave--no-sentinel wave-scale--no-sentinel-middle">Button</button>
+            <button class="btn wave-container wave--no-sentinel wave-scale--no-sentinel-end">Button</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/demo-material-wave/out/main.js"></script>
+  </body>
+</html>
