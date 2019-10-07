@@ -1,0 +1,51 @@
+/* -- 003 - Demo - CSS Transition - Trigger ----------------------------------*/
+
+.wave-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+}
+
+.wave, /* sentinel */
+.js-wave, /* sentinel */
+.wave--no-sentinel:before /* no sentinel */ {
+  position: absolute;
+  content: " "; /* no sentinel */
+  border-radius: 50%;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  margin-top:-50px;
+  margin-left:-50px;
+  background: radial-gradient(rgba(0,0,0,.2) 0,
+                              rgba(0,0,0,.3) 40%,
+                              rgba(0,0,0,.4) 50%,
+                              rgba(0,0,0,.5) 60%,
+                              rgba(255,255,255,0) 70%);
+  /* scale - start */
+  transform: scale(0) translate(0,0);
+  transition: transform 0.5s ease-out,
+              opacity   0.5s ease-out;
+
+  /* origin */
+  top: 19px;
+  left: 52.5px;
+}
+
+/* performing transition with style properties or even transitions means you have
+   to control to enter and cleanup animations yourself in the js vs. this
+   approach  which moves the owness to the CSS.  The other nice piece here is
+   we can set a sane default transition-duration */
+
+/* scale - end */
+.wave-container:hover .wave, /* css trigger */
+.wave--no-sentinel:hover:before, /* css trigger */
+.start-wave /* js trigger */ {
+  transition-duration: 750ms;
+  transform: scale(3) translate(0,0);
+}
+
+.end-wave /* js trigger */ {
+  opacity: 0;
+}

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Material Wave - Demo 2</title>
+    <title>Material Wave - Demo 3</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="002-demo-css-animation.css" />
+    <link rel="stylesheet" type="text/css" href="003-demo-css-transition-trigger.css" />
   </head>
   <body>
 
@@ -12,23 +12,30 @@
       <nav class="demos-menu">
         <ul class="demos-menu__list">
           <li class="demos-menu__list-item"><a href="001-demo-css-transition.html">1</a></li>
-          <li class="demos-menu__list-item demo-menu__list-item--active"><a href="002-demo-css-animation.html">2</a></li>
-          <li class="demos-menu__list-item"><a href="003-demo-css-transition-trigger.html">3</a></li>
+          <li class="demos-menu__list-item"><a href="002-demo-css-animation.html">2</a></li>
+          <li class="demos-menu__list-item demo-menu__list-item--active"><a href="003-demo-css-transition-trigger.html">3</a></li>
         </ul>
       </nav>
 
       <div class="demos-wrapper">
         <div class="demo-wrapper">
-          <h2>CSS Animation - Static - Sentinel</h2>
+          <h2>CSS Transition - Trigger - Hover</h2>
           <div class="demo-btn-wrapper">
             <button class="btn wave-container">Button<div class="wave"></div></button>
           </div>
         </div>
 
         <div class="demo-wrapper">
-          <h2>CSS Animation - Static - No Sentinel</h2>
+          <h2>CSS Transition - Trigger - Hover - no sentinel</h2>
           <div class="demo-btn-wrapper">
             <button class="btn wave-container wave--no-sentinel">Button</button>
+          </div>
+        </div>
+
+        <div class="demo-wrapper">
+          <h2>CSS Transition - Trigger - Click</h2>
+          <div class="demo-btn-wrapper">
+            <button class="btn wave-container js-css-transition-sentinel">Button</button>
           </div>
         </div>
       </div>
