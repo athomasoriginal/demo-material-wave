@@ -1,0 +1,45 @@
+/* -----------------------------------------------------------------------------
+   002 - Demo - CSS Animation
+   ---------------------------------------------------------------------------*/
+
+.wave-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* -- 002 - Demo - CSS Animation - Sentinel ----------------------------------*/
+
+@keyframes waves {
+  from {
+    transform: scale(0) translate(0,0);
+  }
+
+  to {
+    transform: scale(1.6) translate(0,0);
+  }
+}
+
+.wave, /* sentinel */
+.wave--no-sentinel:before /* no-sentinel */ {
+  position: absolute;
+  content: " "; /* no-sentinel */
+  border-radius: 50%;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  margin-top:-50px;
+  margin-left:-50px;
+  background: radial-gradient(rgba(0,0,0,.2) 0,
+                              rgba(0,0,0,.3) 40%,
+                              rgba(0,0,0,.4) 50%,
+                              rgba(0,0,0,.5) 60%,
+                              rgba(255,255,255,0) 70%);
+  /* origin */
+  top: 19px;
+  left: 52.5px;
+
+  /* scale */
+  animation: waves 1.5s infinite forwards;
+}
