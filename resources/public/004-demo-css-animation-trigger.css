@@ -1,0 +1,116 @@
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger
+   ---------------------------------------------------------------------------*/
+
+.wave-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+}
+
+.js-css-animation-sentinel-2-class .wave,
+.js-css-animation-sentinel-1-class .wave,
+.wave--no-sentinel:hover .wave, /* sentinel */
+.wave--no-sentinel:hover:before /* no-sentinel */ {
+  position: absolute;
+  content: " "; /* no-sentinel */
+  border-radius: 50%;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  margin-top:-50px;
+  margin-left:-50px;
+  background: radial-gradient(rgba(0,0,0,.2) 0,
+                             rgba(0,0,0,.3) 40%,
+                             rgba(0,0,0,.4) 50%,
+                             rgba(0,0,0,.5) 60%,
+                             rgba(255,255,255,0) 70%);
+
+  /* origin */
+  top: 19px;
+  left: 52.5px;
+}
+
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger - 2 Class Animation
+   ---------------------------------------------------------------------------*/
+
+@keyframes wave-in {
+  from {
+    transform: scale(0) translate(0,0);
+  }
+
+  to {
+    transform: scale(3) translate(0,0);
+  }
+}
+
+/* notice that we keep re-specify the endpoint for our transform?  This is
+   because  when we apply a new class with a new keyframe the new keyframe does
+   not seem to stack on the old one.  perhaps this has to do with the fact that
+   multiple animations specifying the same properties means the last most animation
+   wins.
+*/
+@keyframes wave-out {
+  from {
+    transform: scale(3) translate(0,0);
+  }
+
+  to {
+    transform: scale(3) translate(0,0);
+    opacity: 0;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger - 1 Class Animation
+   ---------------------------------------------------------------------------*/
+
+@keyframes wave-in-out {
+  0% {
+    transform: scale(0) translate(0,0);
+  }
+
+  50% {
+    transform: scale(3) translate(0,0);
+  }
+
+  100% {
+    transform: scale(3) translate(0,0);
+    opacity: 0
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger - Hover
+   ---------------------------------------------------------------------------*/
+
+.wave--no-sentinel:hover .wave,
+.wave--no-sentinel:hover:before  {
+  animation: wave-in-out 1500ms ease-out forwards;
+}
+
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger - Click - 2 Class
+   ---------------------------------------------------------------------------*/
+
+.start-wave {
+  animation: wave-in 750ms ease-out forwards;
+}
+
+.start-wave.end-wave {
+  animation: wave-out 750ms ease-out forwards;
+}
+
+/* -----------------------------------------------------------------------------
+   004 - Demo - CSS Animation + Trigger - Click - 1 Class
+   ---------------------------------------------------------------------------*/
+
+.start-wave-end-wave,
+.start-wave-end-wave--no-sentinel:before {
+  /* notice this is 1500 and not 750.  This is because in total, this animation
+     should take 1500ms from beginning to end.  In other words.  750ms will be
+     spent animating the wave in and 750ms will be spent animating the wave out */
+  animation: wave-in-out 1500ms ease-out forwards;
+}
